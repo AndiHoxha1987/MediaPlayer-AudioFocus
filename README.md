@@ -8,5 +8,6 @@ resources allocated to it are properly released.
 On this point I called an OnCompletionListener which gets triggered when the MediaPlayer has completed playing the audio file also I follow
 media and application lifecycle to release it when the app or media is stopped.
 
-To call mediaPlayer firs we need to check if we have audioFocus because if we haven't it maybe another application is using it and if we start mediaPlayer without audioFocus it will be overlying. Triggered mediaPlayer with audioFocus will remove the focus where priority is higher.
+To call mediaPlayer first we need to check if we have audioFocus because if we haven't it maybe another application is using it and if we start mediaPlayer without audioFocus it will be overlying. Triggered mediaPlayer with audioFocus will remove the focus where priority is higher. Depends on the situations we can pause, resume, mute, or release mediapler based on audiFocus state.
+When we release mediaPlayer we must abandon the audioFocus too.
 
